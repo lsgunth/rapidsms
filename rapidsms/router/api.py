@@ -60,7 +60,7 @@ def send(text, connections, **kwargs):
               in :setting:`RAPIDSMS_ROUTER`.
     :rtype: :py:class:`~rapidsms.messages.outgoing.OutgoingMessage`
     """
-    if not isinstance(connections, collections.Iterable):
+    if not isinstance(connections, collections.abc.Iterable):
         connections = [connections]
     router = get_router()
     message = router.new_outgoing_message(text=text, connections=connections,
