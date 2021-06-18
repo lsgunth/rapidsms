@@ -2,11 +2,11 @@
 # vim: ai ts=4 sts=4 et sw=4
 
 
-from django.conf.urls import url
+from django.conf.urls import re_path
 from . import views
 
 
 urlpatterns = (
-    url(r"^$", views.generate_identity, name='httptester-index'),
-    url(r"^(?P<identity>\d+)/$", views.message_tester, name='httptester')
+    re_path(r"^$", views.generate_identity, name='httptester-index'),
+    re_path(r"^(?P<identity>\d+)/$", views.message_tester, name='httptester')
 )

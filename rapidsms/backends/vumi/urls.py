@@ -1,10 +1,10 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, re_path
 from rapidsms.backends.vumi import views
 
 
 urlpatterns = (
-    url(r'^account/', include('rapidsms.urls.login_logout')),
-    url(r"^backend/vumi/$",
-        views.VumiBackendView.as_view(backend_name='vumi-backend'),
-        name='vumi-backend'),
+    re_path(r'^account/', include('rapidsms.urls.login_logout')),
+    re_path(r"^backend/vumi/$",
+            views.VumiBackendView.as_view(backend_name='vumi-backend'),
+            name='vumi-backend'),
 )

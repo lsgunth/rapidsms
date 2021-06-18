@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.test.utils import override_settings
-from django.conf.urls import url
+from django.conf.urls import re_path
 from django.urls import reverse
 
 from rapidsms.tests.harness import RapidTest
@@ -16,12 +16,12 @@ class CustomHttpBackend(views.GenericHttpBackendView):
 
 
 urlpatterns = (
-    url(r"^backend/http/$",
-        views.GenericHttpBackendView.as_view(backend_name='http-backend'),
-        name='http-backend'),
-    url(r"^backend/http-custom/$",
-        CustomHttpBackend.as_view(),
-        name='custom-http-backend'),
+    re_path(r"^backend/http/$",
+            views.GenericHttpBackendView.as_view(backend_name='http-backend'),
+            name='http-backend'),
+    re_path(r"^backend/http-custom/$",
+            CustomHttpBackend.as_view(),
+            name='custom-http-backend'),
 )
 
 
