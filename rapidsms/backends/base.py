@@ -39,7 +39,7 @@ class BackendBase(object):
         pass
 
     def send(self, id_, text, identities, context=None):
-        """
+        r"""
         Backend sending logic. The router will call this method for each
         outbound message. This method must be overridden by sub-classes.
         Backends typically initiate HTTP requests from within this method.

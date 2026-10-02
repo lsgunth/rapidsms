@@ -9,7 +9,7 @@ from .base import BaseHandler
 
 class PatternHandler(BaseHandler):
 
-    """
+    r"""
     This handler type can be subclassed to create simple pattern-based
     handlers. This isn't usually a good idea -- it's cumbersome to write
     patterns with enough flexibility to be used in the real world -- but
