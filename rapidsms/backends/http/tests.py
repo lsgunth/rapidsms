@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.test.utils import override_settings
-from django.conf.urls import re_path
+from django.urls import re_path
 from django.urls import reverse
 
 from rapidsms.tests.harness import RapidTest
